@@ -24,5 +24,36 @@ namespace Composicao2.Entities
             Content = content;
             Likes = likes;
         }
+
+        public void AddComment(Comment comment)
+        {
+            {
+                Comments.Add(comment);
+            }
+        }
+        public void RemoveComment(Comment comment)
+        {
+            {
+                Comments.Remove(comment);
+            }
+            //padrao usar o Add e o Remove numa relação *para muitos
+        }
+
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Title);
+            sb.Append(Likes);
+            sb.Append(" Likes - ");
+            sb.AppendLine(Moment.ToString("dd/MM/yyyy"));
+            sb.AppendLine(Content);
+            sb.AppendLine("Comments: ");
+            foreach (Comment c in Comments)
+            {
+                sb.AppendLine(c.Text);
+            }
+            return sb.ToString();
+        }
     }
 }
