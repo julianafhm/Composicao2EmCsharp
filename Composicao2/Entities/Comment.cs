@@ -10,7 +10,8 @@ namespace Composicao2.Entities
     {
         public string Text { get; set; }
 
-        public Comment() { 
+        public Comment()
+        {
         }
 
         public Comment(string text)
